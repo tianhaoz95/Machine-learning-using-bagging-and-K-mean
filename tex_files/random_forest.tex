@@ -1,0 +1,24 @@
+\section{Random Forest(20 pts)}
+In this question, we will implement the following functions in \texttt{q1\_starter.py}: \texttt{plot\_error}, \texttt{random\_forest} and \texttt{bagging\_ensemble}.
+
+\begin{problem}
+First, we will study decision trees on the Iris flower dataset, which consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Each sample is described by 4 features: the length and the width of the sepals and the length and the width of the petals. We will use only 2 features sepal length and sepal width.
+
+Implement decision tree classifiers using \texttt{sklearn}. Let \texttt{criterion='entropy'}, so that our selection of which node to split on depends on the information gain. In addition, we will use \texttt{max\_depth}, the maximum allowed depth of the decision tree, to avoid over-complex trees that overfit the data. 
+
+Implement \texttt{plot\_error(X, y)} and generate a plot of 5-fold cross-validation training and test error vs. depth of the trees by varying \texttt{max\_depth} from 1 to 20. 
+
+(Split the data and labels in 5-folds using  \texttt{sklearn.cross\_validation.StratifiedKFold} and train decision trees on 4 folds.) For which value of \texttt{max\_depth}, does the classifier perform the best?
+\end{problem}
+
+\begin{problem}
+Now, we will study ensemble approaches, bagging and random forest on a handwritten digit dataset. We will use a subset of 720 examples from 4 classes.
+
+Implement \texttt{bagging\_ensemble(X\_train, y\_train, X\_test, y\_test, n\_clf = 10)}. A bagging ensemble classifier consists of \texttt{n\_clf} decision trees where each decision tree is trained independently on a bootstrap sample of the training data. Here, the final prediction of the bagging classifier is determined by a majority vote of these \texttt{n\_clf} decision trees.
+
+Implement \texttt{random\_forest(X\_train, y\_train, X\_test, y\_test, n\_clf = 10)}. Like bagging, random forest also consists of \texttt{n\_clf} decision trees where each decision tree is trained independently on a bootstrap sample of the training data. However, for each node we randomly select $m$ features as candidates for splitting on (see parameter \texttt{max\_features} of \texttt{sklearn.tree.DecisionTressClassifier}). Again, here the final output is determined by majority vote. 
+
+Now, compare the performance of these ensemble classifiers using 100 random splits of the digits dataset into training and test sets, where the test set contains roughly 20\% of the data, i.e. you need to randomly generate training set and test set for 100 times. Run both algorithms on these data and obtain 100 accuracy values for each algorithm. 
+
+How does the average test performance of the two methods compare as we vary $m$? Choose a setting for $m$ based on your observations and plot the result as two histograms (we've provided you with a function for plotting the histograms).
+\end{problem}

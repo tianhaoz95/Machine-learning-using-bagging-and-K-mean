@@ -1,0 +1,42 @@
+\documentclass{hw_cl}
+\newcommand\alg{\mathcal{A}}
+\renewcommand\R{\mathbb{R}}
+\newcommand\x{\mathbf{x}}
+\newcommand\w{\mathbf{w}}
+\newcommand\y{\mathbf{y}}
+\newcommand\z{\mathbf{z}}
+\newcommand\p{\mathbf{p}}
+\newcommand\EE{\mathbb{E}}
+\newcommand\PP{\mathbb{P}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\usepackage[T1]{fontenc}
+\usepackage{todonotes}
+
+\setcounter{hwcount}{4}
+
+%% Homework info
+\def\TVname{Zhao Fu \& Valli}
+\def\TVedit{}
+\hwclass{EECS 445 -- Machine Learning}
+\hwdue{Monday, 11/07/2016 @ 5pm}
+\hwassignment{Homework \#\arabic{hwcount}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+ \textbf{Homework Policy:} Working in groups is fine, but each member must submit their own writeup. Please write the members of your group on your solutions. There is no strict limit to the size of the group but we may find it a bit suspicious if there are more than 4 to a team. \textbf{For coding problems, please include your code and report your results (values, plots, etc.) unless we say otherwise within the problem.} in your PDF submission. You will lose points if your experimental results are only accessible through rerunning your code. Homework will be submitted via Gradescope (https://gradescope.com/). We accept late submissions but your score will be rescaled to $Score_{rescaled} = Score_{origin} * \max(0, 1 - 0.05 * late\_hour)$.
+\vspace{1em}
+
+
+\textbf{Additional Note:} You \emph{may not} use \texttt{scikit-learn} or \texttt{scipy}'s information theory libraries for the programming exercises \emph{unless} mentioned in specific problems, although you may use them to check if your implementation is correct.
+
+\input{hw4/random_forest}
+
+\input{hw4/cluster}
+
+\end{document}
