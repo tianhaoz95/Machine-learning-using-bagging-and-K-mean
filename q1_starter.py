@@ -40,7 +40,6 @@ def plot_error(X, y):
     '''
 
     # ---------- make your implementation here---------------
-    '''
     train_error = []
     test_error = []
     max_depth = list(range(1, 21))
@@ -55,8 +54,8 @@ def plot_error(X, y):
            ncol=2, mode="expand", borderaxespad=0.)
     plt.ylabel('errors')
     plt.xlabel('max depth')
-    plt.show()
-    '''
+    plt.savefig('max_depth_vs_error.png')
+    #plt.show()
     # -------------------------------------------------------
 
 def majority_vote(pred_list):
@@ -173,7 +172,9 @@ def plot_histograms(random_forest_scores, bagging_scores):
     plt.xlabel('Accuracy')
     plt.ylabel('Frequency')
     plt.legend(loc='upper left')
-    plt.show()
+    plt.savefig('histogram.png')
+    print("all done")
+    #plt.show()
 
 
 def q1a():
@@ -193,7 +194,7 @@ def q1b():
     # Analyze how the performance of bagging & random forest changes with m
     results1, results2 = [], []
     for j in range(0, 64, 2):
-        print (j)
+        print (j / 64 * 100, "%")
         bagging_scores, random_forest_scores = [], []
         for i in range(100):
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
@@ -208,11 +209,15 @@ def q1b():
     plt.xlabel('m')
     plt.ylabel('Accuracy')
     plt.legend(loc='upper right')
-    plt.show()
+    plt.savefig('second_plot.png')
+    #plt.show()
+
+    print("second plot finished, on to histogram")
 
     #Plot histogram of performances for m = 8
     bagging_scores, random_forest_scores = [], []
     for i in range(100):
+        print(i, "%")
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
         random_forest_scores.append(random_forest(X_train, y_train, X_test, y_test,8))
         bagging_scores.append(bagging_ensemble(X_train, y_train, X_test, y_test))
