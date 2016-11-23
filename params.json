@@ -1,0 +1,6 @@
+{
+  "name": "Machine learning using bagging and K-mean",
+  "tagline": "Several small experiments with bagging and K-mean",
+  "body": "### What are in this repository?\r\n\r\nThis repository contains some small experiments I did with bagging algorithm and K-mean algorithm. Besides, it also contains the code for a public machine learning contest. \r\n\r\nThe contest can be found [here](https://inclass.kaggle.com/c/mdst-flint)\r\n\r\n### What did I do in the contest code?\r\n\r\nBasically, to predict whether or not the water supply is polluted, I learned part of the public data sets (training set) using Logistic Regression model, Decision Tree model (bagging and random forest). Then, test the models using the test set separated from the overall data set. Once I know which model performs better, I will train the model again using all the data sets I have. Eventually, I used the final model for predicting the official test set whose result is to be submitted to the contest.\r\n\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
